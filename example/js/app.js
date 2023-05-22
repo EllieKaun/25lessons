@@ -35,3 +35,31 @@ tabsParent.addEventListener("click", (e) => {
         })
     }
 })
+
+//slider 
+
+
+const modal = document.querySelector(".modal")
+const modalOpenBtn = document.querySelector(".btn_white")
+const modalCloseBtn = document.querySelector(".modal__close")
+
+const handleOpenModal = () => {
+    modal.classList.add("show")
+    modal.classList.remove("hide")
+    document.body.style.overflow = "hidden"
+}
+
+const handleCloseModal = () => {
+    modal.classList.add("hide")
+    modal.classList.remove("show")
+    document.body.style.overflow = ""
+}
+
+modalOpenBtn.addEventListener("click", handleOpenModal)
+modalCloseBtn.addEventListener("click", handleCloseModal)
+
+modal.addEventListener("click", (e) => {
+    if(e.target.classList.contains("modal")){
+        handleCloseModal()
+    }
+})
